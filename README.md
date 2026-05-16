@@ -1,6 +1,6 @@
-# 🎬 Movie App - Technical Assessment
+# 🎬 Movie App - Technical Exam
 
-โปรเจกต์นี้เป็นแอปพลิเคชันเว็บสำหรับจัดการ Movie System ที่พัฒนาด้วย Next.js + TypeScript โดยรวมทั้ง Frontend และ Backend ไว้ในโปรเจกต์เดียว (Fullstack Monorepo Style)
+โปรเจกต์นี้เป็นแอปพลิเคชันเว็บสำหรับจัดการ managing Movie records. ที่พัฒนาด้วย Next.js + TypeScript โดยรวมทั้ง Frontend และ Backend ไว้ในโปรเจกต์เดียว (Fullstack Monorepo Style)
 
 ---
 
@@ -131,7 +131,6 @@ Password: 12345678
 
 * โปรเจกต์ต้องเชื่อมต่อ MongoDB ก่อนใช้งาน
 * Docker ใช้สำหรับรันฐานข้อมูลเท่านั้น
-* ระบบ RBAC ใช้ควบคุมสิทธิ์ผู้ใช้งาน
 * ตรวจสอบ port `27017` หากเกิดปัญหา
 
 ---
