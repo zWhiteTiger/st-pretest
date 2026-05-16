@@ -146,4 +146,4 @@ Password: 12345678
 
 ## 📫 ผู้พัฒนา
 
-(Nattawut Sarika)[https://port.toramaru.cc/]
+[Nattawut Sarika](https://port.toramaru.cc/)
