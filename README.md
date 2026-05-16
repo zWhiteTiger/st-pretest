@@ -146,4 +146,4 @@ Password: 12345678
 
 ## 📫 ผู้พัฒนา
 
-[Your Name]
+(Nattawut Sarika)[https://github.com/zWhiteTiger](https://port.toramaru.cc/)]
