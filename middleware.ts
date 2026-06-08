@@ -13,7 +13,7 @@ const ALLOWED_ROLES = [
 export async function middleware(req: NextRequest) {
     const token = await getToken({
         req,
-        secret: process.env.NEXTAUTH_SECRET, // ใช้ตัวนี้ถ้ามี
+        secret: process.env.NEXTAUTH_SECRET,
     });
 
     console.log("TOKEN:", token);
