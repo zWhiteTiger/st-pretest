@@ -12,8 +12,6 @@ async function connectDB() {
 }
 
 export async function GET(
-    req: Request,
-    { params }: { params: { id: string } }
 ) {
     try {
         const session = await getServerSession(authConfig);
