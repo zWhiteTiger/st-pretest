@@ -1,17 +1,10 @@
-// middleware.ts
-
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import { getToken } from "next-auth/jwt"
 
-const ALLOWED_ROLES = [
-    "FLOORSTAFF",
-    "TEAMLEADER",
-    "MANAGER",
-]
+const ALLOWED_ROLES = ["FLOORSTAFF", "TEAMLEADER", "MANAGER"]
 
 export async function middleware(req: NextRequest) {
-
     const token = await getToken({
         req,
         secret: process.env.NEXTAUTH_SECRET,
@@ -20,19 +13,15 @@ export async function middleware(req: NextRequest) {
     const pathname = req.nextUrl.pathname
 
     if (pathname.startsWith("/manage")) {
-
         if (!token) {
-            return NextResponse.redirect(
-                new URL("/auth/login", req.url)
-            )
+            return NextResponse.redirect(new URL("/auth/login", req.url))
         }
 
-        const role = token.role as string
+        // แก้ไขตรงนี้
+        const role = (token.user as any)?.role as string
 
-        if (!ALLOWED_ROLES.includes(role)) {
-            return NextResponse.redirect(
-                new URL("/", req.url)
-            )
+        if (!role || !ALLOWED_ROLES.includes(role)) {
+            return NextResponse.redirect(new URL("/", req.url))
         }
     }
 
