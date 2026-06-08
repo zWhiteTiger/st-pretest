@@ -11,7 +11,10 @@ async function connectDB() {
     await mongoose.connect(MONGODB_URI);
 }
 
-export async function GET() {
+export async function GET(
+    req: Request,
+    { params }: { params: { id: string } }
+) {
     try {
         const session = await getServerSession(authConfig);
 
