@@ -16,6 +16,8 @@ export async function middleware(req: NextRequest) {
         secret: process.env.NEXTAUTH_SECRET,
     });
 
+    console.log("TOKEN", token);
+    console.log("ROLE", token?.role);
 
     if (!token) {
         return NextResponse.redirect(
@@ -24,10 +26,6 @@ export async function middleware(req: NextRequest) {
     }
 
     const role = token.role as string;
-
-    console.log(
-        req.cookies.get(role)
-    )
 
     if (!ALLOWED_ROLES.includes(role)) {
         return NextResponse.redirect(
