@@ -16,7 +16,10 @@ export async function middleware(req: NextRequest) {
         secret: process.env.NEXTAUTH_SECRET,
     });
 
-    console.log("TOKEN:", token);
+    console.log(
+        req.cookies.get("__Secure-next-auth.session-token"),
+        req.cookies.get("next-auth.session-token")
+    )
 
     if (!token) {
         return NextResponse.redirect(
